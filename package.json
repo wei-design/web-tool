@@ -1,0 +1,60 @@
+{
+    "name": "@wei_design/web-tool",
+    "private": false,
+    "packageManager": "pnpm@7.6.0",
+    "version": "1.0.0",
+    "description": "Wei Design - js tool library, @wei_design/web-tool",
+    "license": "MIT",
+    "auther": "wforguo@qq.com",
+    "keywords": [
+        "Wei Design",
+        "@wei_design/web-tool",
+        "web-tool",
+        "js-tool",
+        "vite",
+        "es6 tool"
+    ],
+    "files": [
+        "lib/*"
+    ],
+    "main": "./lib/web-tool.umd.js",
+    "module": "./lib/web-tool.es.js",
+    "exports": {
+        ".": {
+            "import": "./lib/web-tool.es.js",
+            "require": "./lib/web-tool.umd.js"
+        }
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "release": "standard-version",
+        "release:alpha": "standard-version --prerelease alpha",
+        "release:rc": "standard-version --prerelease rc",
+        "release:major": "npm run release -- --release-as major",
+        "release:minor": "npm run release -- --release-as minor",
+        "release:patch": "npm run release -- --release-as patch"
+    },
+    "homepage": "https://github.com/wforguo/we-tool.git",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wforguo/we-tool.git"
+    },
+    "devDependencies": {
+        "@types/node": "^18.7.6",
+        "@vitejs/plugin-vue": "3.0.3",
+        "standard-version": "^9.1.0",
+        "typescript": "^4.5.4",
+        "vite": "3.0.8",
+        "vue": "3.2.37"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "engines": {
+        "node": ">=14.19.0"
+    }
+}
