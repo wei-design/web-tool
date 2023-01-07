@@ -18,13 +18,15 @@
         "lib/*"
     ],
     "main": "./lib/web-tool.umd.js",
-    "module": "./lib/web-tool.es.js",
+    "module": "./lib/web-tool.mjs",
     "exports": {
         ".": {
-            "import": "./lib/web-tool.es.js",
+            "import": "./lib/web-tool.mjs",
             "require": "./lib/web-tool.umd.js"
         }
     },
+    "typings": "./index.d.ts",
+    "types": "index.d.ts",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
@@ -36,10 +38,10 @@
         "release:minor": "npm run release -- --release-as minor",
         "release:patch": "npm run release -- --release-as patch"
     },
-    "homepage": "https://github.com/wforguo/we-tool.git",
+    "homepage": "https://github.com/wei-design/web-tool",
     "repository": {
         "type": "git",
-        "url": "https://github.com/wforguo/we-tool.git"
+        "url": "https://github.com/wei-design/web-tool"
     },
     "devDependencies": {
         "@types/node": "^18.7.6",

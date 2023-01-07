@@ -19,17 +19,18 @@ export default defineConfig({
      * @desc 打包配置
      * 对代码进行两份格式打包: commonjs 与 es module
      * "main": "./lib/web-tool.umd.js",
-     * "module": "./lib/web-tool.es.js",
+     * "module": "./lib/web-tool.mjs",
      * package中[main] 字段作为 commonjs 入口
      * package中[module] 字段作为 es module 入口
      */
+    // [vite库模式配置](https://cn.vitejs.dev/guide/build.html#library-mode)
     build: {
-        lib: {
-            entry: resolve(__dirname, 'package/main.ts'),
-            name: 'web-tool',
-            fileName: (format: string) => `web-tool.${format}.js`
-        },
         outDir: 'lib',
+        lib: {
+            entry: resolve(__dirname, './package/index.ts'),
+            name: 'WebTool',
+            fileName: `web-tool`
+        },
         sourcemap: true,
         rollupOptions: {
             // 确保外部化处理那些你不想打包进库的依赖
