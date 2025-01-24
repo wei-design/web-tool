@@ -1,51 +1,56 @@
 {
-    "name": "wei-design",
-    "private": true,
-    "scripts": {
-        "prepare": "husky install",
-        "preinstall": "npx -y only-allow pnpm",
-        "lint": "eslint . --ext .js,.ts --fix --ignore-path .gitignore",
-        "format": "prettier --write .",
-        "typecheck": "tsc --noEmit",
-        "test": "vitest",
-        "coverage": "vitest run --coverage"
-    },
-    "homepage": "https://github.com/wei-design/esuse",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/wei-design/esuse"
-    },
-    "devDependencies": {
-        "@commitlint/cli": "^17.6.6",
-        "@commitlint/config-conventional": "^17.6.6",
-        "@release-it/conventional-changelog": "^7.0.0",
-        "@types/jsdom": "^21.1.7",
-        "@typescript-eslint/eslint-plugin": "^6.0.0",
-        "@typescript-eslint/parser": "^6.0.0",
-        "@vitest/coverage-v8": "2.1.8",
-        "eslint": "^8.44.0",
-        "eslint-config-prettier": "^8.8.0",
-        "eslint-plugin-prettier": "^5.0.0",
-        "husky": "^8.0.0",
-        "jsdom": "^25.0.1",
-        "lint-staged": "^13.2.3",
-        "prettier": "^3.0.0",
-        "release-it": "^16.1.0",
-        "typescript": "^5.4.5",
-        "vite": "^5.2.10",
-        "vite-plugin-dts": "^3.9.1",
-        "vite-plugin-static-copy": "^1.0.4",
-        "vitest": "^2.1.8"
-    },
-    "lint-staged": {
-        "*.{js,jsx,ts,tsx}": [
-            "npm run lint",
-            "git add ."
-        ]
-    },
-    "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
-        ]
-    }
+  "name": "wei-design",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "preinstall": "npx -y only-allow pnpm",
+    "docs:dev": "vitepress dev packages",
+    "docs:build": "vitepress build packages",
+    "docs:serve": "vitepress serve packages",
+    "lint": "eslint . --ext .js,.ts --fix --ignore-path .gitignore",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "homepage": "https://github.com/wei-design/esuse",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wei-design/esuse"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "@release-it/conventional-changelog": "^7.0.0",
+    "@types/jsdom": "^21.1.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitest/coverage-v8": "2.1.8",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.0",
+    "jsdom": "^25.0.1",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
+    "release-it": "^16.1.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-static-copy": "^1.0.4",
+    "vitepress": "^1.5.0",
+    "vitest": "^2.1.8",
+    "vue": "^3.5.13"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "git add ."
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
 }
